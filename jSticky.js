@@ -20,7 +20,7 @@
 			//$('#col-two').css({height: profileHeight, position:'relative'});
 			$(window).scroll(function()
 			{
-				var scrollOffest = parseInt($('#scroll').offset().top);
+				var scrollOffest = parseInt($('#scroll').offset().top + options.offsetTop);
 				
 				var result = scrollHeight + scrollOffest - stickerTop; // position from top the bottom of the #scroll div is
 				
@@ -45,7 +45,7 @@
 				    	}
 				    	else
 				    	{
-				    		scrollTrack.css((parseInt($(window).scrollTop())+parseInt($("#scroll").css('margin-top')) > stickerTop) ? {position:'fixed',top:'0px'} : {position:'relative'});
+				    		scrollTrack.css((parseInt($(window).scrollTop())+parseInt($("#scroll").css('margin-top')) > stickerTop-options.offsetTop) ? {position:'fixed',top:options.offsetTop+'px'} : {position:'relative'});
 				    	}
 				    }
 				}
