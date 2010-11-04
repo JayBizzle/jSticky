@@ -22,7 +22,7 @@ $(window).load(function() {
 		    	var scrollAmount = parseInt($(window).scrollTop()) + scrollHeight - stickerTop;
 		    	
 		    	// uncomment following line for debugging
-		    	//$('#looking-for h1').text(result + "-" +scrollAmount + "-" +profileHeight);
+		    	//$('#looking-for h1').text(result + "-" +scrollAmount + "-" +profileHeight);////
 		    	
 		    	if(scrollAmount < profileHeight)
 		    	{
