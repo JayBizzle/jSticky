@@ -2,7 +2,7 @@
  $.fn.jSticky = function(options) {
 
   var defaults = {
-   offsetTop: 0,
+   offsetTop: 0, // Offset from top of browser we should make element sticky
    stopScrollingAt:false
   };
   var options = $.extend(defaults, options);
