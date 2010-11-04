@@ -1,3 +1,25 @@
+(function($){
+ $.fn.truncate = function(options) {
+
+  var defaults = {
+   length: 300,
+   minTrail: 20,
+   moreText: "more",
+   lessText: "less",
+   ellipsisText: "..."
+  };
+  var options = $.extend(defaults, options);
+    
+  return this.each(function() {
+
+  });
+ };
+})(jQuery);
+
+
+
+
+
 $(window).load(function() {
 
 	if($('#scroll').length != 0)
