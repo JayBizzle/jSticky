@@ -4,7 +4,7 @@
 	<head>
 		<title>jSticky :: Example</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
-		<!--<script src="jSticky.js" type="text/javascript"></script>-->
+		<script src="jSticky.js" type="text/javascript"></script>
 		
 		
 <script type="text/javascript">
@@ -12,56 +12,7 @@
 
 $(window).load(function() {
 
-	if($('#scroll').length != 0)
-	{
-		var stickerTop = parseInt($('#scroll').offset().top); //position from top
-		var scrollHeight = $('#scroll').height(); // height of scroll menu
-		var scrollTrack = $("#scroll"); // height of the scroll track
-		var profileHeight = $('.scrollTrack').height(); // height of the main body text
-		
-		if(profileHeight > scrollHeight)
-		{
-		
-			//$('#col-two').css({height: profileHeight, position:'relative'});
-			$(window).scroll(function()
-			{
-				var scrollOffest = parseInt($('#scroll').offset().top);
-				
-				var result = scrollHeight + scrollOffest - stickerTop; // position from top the bottom of the #scroll div is
-				
-				
-			
-		    	var scrollAmount = parseInt($(window).scrollTop()) + scrollHeight - stickerTop;
-		    	
-		    	// uncomment following line for debugging
-		    	$('#scroll').text(result + "-" +scrollAmount + "-" +profileHeight);
-		    	
-		    	if(scrollAmount < profileHeight)
-		    	{
-		    		scrollTrack.removeAttr("style");
-					if(result < profileHeight)
-					{
-						if(jQuery.browser.version === '6.0')
-						{	
-							if(parseInt($(window).scrollTop()) > stickerTop)
-							{
-				    			scrollTrack.attr('style', 'position:relative;margin-top:'+parseInt(parseInt($(window).scrollTop()) - stickerTop) +'px');
-				    		}
-				    	}
-				    	else
-				    	{
-				    		scrollTrack.css((parseInt($(window).scrollTop())+parseInt($("#scroll").css('margin-top')) > stickerTop) ? {position:'fixed',top:'0px'} : {position:'relative'});
-				    	}
-				    }
-				}
-				else
-				{
-					    scrollTrack.removeAttr("style");
-			    		scrollTrack.attr('style', 'position:absolute; bottom:0px');
-				}
-			}); 
-		}
-	}
+	$('#scroll').jSticky();
 });
 </script>
 
@@ -72,6 +23,21 @@ $(window).load(function() {
 				height:2000px;
 				position:relative;
 				margin-top:40px;
+				width:100px;
+				border: solid 2px whitesmoke;
+			}
+			
+			#scroll
+			{
+				background-color: whitesmoke;
+				height:50px;
+				width:100px;
+			}
+			
+			.footer
+			{
+				height:1000px;
+				background-color:#ccc;
 			}
 		</style>
 	</head>
@@ -81,6 +47,9 @@ $(window).load(function() {
 		<div id="scroll">
 			This is the scroller
 		</div>
+	</div>
+	<div class="footer">
+		Test footer
 	</div>
 	
 	

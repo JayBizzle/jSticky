@@ -3,33 +3,21 @@
 
   var defaults = {
    offsetTop: 0,
-   stopScrollingAt:NULL
+   stopScrollingAt:false
   };
   var options = $.extend(defaults, options);
     
   return this.each(function() {
-
-  });
- };
-})(jQuery);
-
-
-
-
-
-$(window).load(function() {
-
-	if($('#scroll').length != 0)
-	{
+  
 		var stickerTop = parseInt($('#scroll').offset().top); //position from top
 		var scrollHeight = $('#scroll').height(); // height of scroll menu
 		var scrollTrack = $("#scroll"); // height of the scroll track
-		var profileHeight = $('.company-profile').height(); // height of the main body text
+		var profileHeight = $('.scrollTrack').height(); // height of the main body text
 		
 		if(profileHeight > scrollHeight)
 		{
 		
-			$('#col-two').css({height: profileHeight, position:'relative'});
+			//$('#col-two').css({height: profileHeight, position:'relative'});
 			$(window).scroll(function()
 			{
 				var scrollOffest = parseInt($('#scroll').offset().top);
@@ -41,7 +29,7 @@ $(window).load(function() {
 		    	var scrollAmount = parseInt($(window).scrollTop()) + scrollHeight - stickerTop;
 		    	
 		    	// uncomment following line for debugging
-		    	//$('#looking-for h1').text(result + "-" +scrollAmount + "-" +profileHeight);////
+		    	$('#scroll').text(result + "-" +scrollAmount + "-" +profileHeight);
 		    	
 		    	if(scrollAmount < profileHeight)
 		    	{
@@ -68,5 +56,6 @@ $(window).load(function() {
 				}
 			}); 
 		}
-	}
-});
+  });
+ };
+})(jQuery);
