@@ -1,12 +1,9 @@
 (function($){
- $.fn.truncate = function(options) {
+ $.fn.jSticky = function(options) {
 
   var defaults = {
-   length: 300,
-   minTrail: 20,
-   moreText: "more",
-   lessText: "less",
-   ellipsisText: "..."
+   offsetTop: 0,
+   stopScrollingAt:NULL
   };
   var options = $.extend(defaults, options);
     
