@@ -31,7 +31,7 @@
 		    	// uncomment following line for debugging
 		    	$('#scroll').text(result + "-" +scrollAmount + "-" +profileHeight);
 		    	
-		    	if(scrollAmount < profileHeight)
+		    	if(scrollAmount < profileHeight-options.offsetTop)
 		    	{
 		    		scrollTrack.removeAttr("style");
 					if(result < profileHeight)
