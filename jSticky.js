@@ -3,6 +3,7 @@
 
   var defaults = {
    offsetTop: 0, // Offset from top of browser we should make element sticky
+   offsetBottom: 0,
    stopScrollingAt:false
   };
   var options = $.extend(defaults, options);
