@@ -12,19 +12,23 @@
 
 $(window).load(function() {
 
-	$('#scroll').jSticky({offsetTop:50});
+	$('#scroll').jSticky({offsetTop:180, debug:true});
 });
 </script>
 
 		
 		<style  type="text/css">
+			body,html
+			{
+			margin:0;
+			padding:0;
+			}
 			.scrollTrack
 			{
 				height:2000px;
 				position:relative;
-				margin-top:70px;
 				width:100px;
-				border: solid 2px whitesmoke;
+				
 			}
 			
 			#scroll
@@ -42,7 +46,7 @@ $(window).load(function() {
 		</style>
 	</head>
 	<body>
-	
+	<div style="height:70px; background-color:#ccc;">Header</div>
 	<div class="scrollTrack">
 		<div id="scroll">
 			This is the scroller
